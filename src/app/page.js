@@ -8,7 +8,7 @@ function BusiCard({title, description, imgsrc, href}) {
         rounded-lg 
         border 
         border-transparent 
-        p-0
+        px-0
         transition-colors
         flex
         m-8
@@ -49,12 +49,13 @@ export default function Home() {
     <main className="
       min-h-screen
       text-center
-      p-24
+      p-px
     ">
       <div>
         <h1 className="
           font-serif
           text-5xl
+          mt-8
         ">
           Darren T. MacDonald
         </h1>
