@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,6 +17,9 @@ module.exports = {
       backgroundImage: {
         
       },
+      fontFamily: {
+        serif: ['var(--font-rokkitt)', ...fontFamily.serif],
+      }
     },
   },
   plugins: [],

@@ -1,9 +1,16 @@
 import Image from 'next/image'
 import SuPreviewPic from '../../public/su_preview.png';
+import { Rokkitt } from 'next/font/google';
 
-function BusiCard({title, description, imgsrc, href, github}) {
+
+const rokkitt = Rokkitt({
+  subsets: ['latin'],
+  variable: '--font-rokkitt',
+})
+
+function BusiCard({title, description, imgsrc, live, github}) {
   return (
-    <a className="
+    <div className="
       group 
       bg-gray-100
       rounded-lg 
@@ -16,9 +23,7 @@ function BusiCard({title, description, imgsrc, href, github}) {
       overflow:hidden
       transition-colors
       "
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer">
+      >
       
       <div className="
           text-center
@@ -32,6 +37,14 @@ function BusiCard({title, description, imgsrc, href, github}) {
         <p>
           <a href={github} alt="github link">
             {github}
+          </a>
+        </p>
+        <p>
+          <a href={live}
+            target="_blank"
+            rel="noopener noreferrer"
+            alt="Serverless Deployment">
+            Serverless Deployment
           </a>
         </p>
       </div>
@@ -50,7 +63,7 @@ function BusiCard({title, description, imgsrc, href, github}) {
           alt={description}
           />
       </div>
-    </a>
+    </div>
   )
 }
 
@@ -62,13 +75,14 @@ export default function Home() {
       p-px
     ">
       <div>
-        <h1 className="
+        <h1 className={`
+          ${rokkitt.variable}
           font-serif
           text-5xl
           leading-loose
           mt-24
-        "
-        style={{"fontFamily":"Rokkitt, Sans"}}>
+        `}
+        >
           Darren T. MacDonald
         </h1>
         <p>Web - Cloud - 3D</p>
