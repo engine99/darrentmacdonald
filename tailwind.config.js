@@ -5,6 +5,11 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  // safelist: [  
+  //   {
+  //     pattern: /./, Use this to build & include all styles
+  //   },
+  // ],
   theme: {
     extend: {
       backgroundImage: {

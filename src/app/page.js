@@ -4,20 +4,18 @@ import SuPreviewPic from '../../public/su_preview.png';
 function BusiCard({title, description, imgsrc, href}) {
   return (
     <a className="
-        group 
-        rounded-lg 
-        border 
-        border-transparent 
-        px-0
-        transition-colors
-        flex
-        m-8
-        h-32
-        bg-gray-400
-        hover:border-gray-300 
-        hover:bg-gray-100 
-        hover:dark:border-neutral-700 
-        hover:dark:bg-neutral-800/30"
+      group 
+      bg-gray-100
+      rounded-lg 
+      border 
+      border-gray-300 
+      p-0.5
+      m-8
+      h-32
+      flex
+      overflow:hidden
+      transition-colors
+      "
       href={href}
       target="_blank"
       rel="noopener noreferrer">
@@ -32,14 +30,21 @@ function BusiCard({title, description, imgsrc, href}) {
           {description}
         </p>
       </div>
-      <Image className="
-      block
-      w-auto
-
-      "
-        src={imgsrc}
-        alt={description}
-      />
+      <div className="
+        w-40
+        overflow-hidden
+        ">
+        <Image className="
+          block
+          w-auto
+          group-hover:scale-110
+          rounded-md
+          "
+          style=""
+          src={imgsrc}
+          alt={description}
+          />
+      </div>
     </a>
   )
 }
@@ -55,12 +60,15 @@ export default function Home() {
         <h1 className="
           font-serif
           text-5xl
-          mt-8
-        ">
+          leading-loose
+          mt-24
+        "
+        style={{"fontFamily":"Rokkitt, Sans"}}>
           Darren T. MacDonald
         </h1>
+        <p>Web - Cloud - 3D</p>
       </div>
-      <div className="mb-32       
+      <div className="my-32       
                       text-center">
 
         <BusiCard
