@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import SuPreviewPic from '../../public/su_preview.png';
 
-function BusiCard({title, description, imgsrc, href}) {
+function BusiCard({title, description, imgsrc, href, github}) {
   return (
     <a className="
       group 
@@ -28,6 +28,11 @@ function BusiCard({title, description, imgsrc, href}) {
         </h2>
         <p className={`m-0 text-sm opacity-50`}>
           {description}
+        </p>
+        <p>
+          <a href={github} alt="github link">
+            {github}
+          </a>
         </p>
       </div>
       <div className="
@@ -76,6 +81,7 @@ export default function Home() {
           href="https://www.darrentmacdonald.com/sudoku"
           description="Handy mobile-friendly Sudoku puzzle-solver"
           imgsrc={SuPreviewPic}
+          github="https://github.com/engine99/sudokusolver"
         />
 
       </div>

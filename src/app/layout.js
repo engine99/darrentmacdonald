@@ -13,8 +13,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500;700" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
+        <link as="style" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500;700" />
       </head>
       <body className="
       px-8
