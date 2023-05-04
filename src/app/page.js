@@ -70,7 +70,6 @@ function BusiCard({title, description, imgsrc, live, github}) {
 export default function Home() {
   return (
     <main className="
-      min-h-screen
       text-center
       p-px
     ">

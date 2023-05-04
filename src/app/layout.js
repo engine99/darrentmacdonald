@@ -1,5 +1,8 @@
 import './globals.css'
+
+import BackgroundPic from '../../public/7692.jpg';
 import { Inter } from 'next/font/google'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,18 +17,29 @@ export default function RootLayout({ children }) {
       <head>
       </head>
       <body className="
-      px-8
       {inter.className}
       ">
-        <div className='
-        paperPage
-        bg-gray-50
-        mx-auto
-        mt-4
-        max-w-4xl
-        drop-shadow-xl'>
-          {children}
-        </div>
+        <Image
+          className='hidden md:block '
+          src={BackgroundPic}
+          alt="Beautiful New Brunswick"
+          style={{
+            "z-index": "-10",
+            top: 0,
+            position: "fixed",
+            width: "100%"
+          }}
+        />
+
+          <div className='
+          paperPage
+          bg-gray-50
+          mx-auto
+          mt-4
+          max-w-4xl
+          drop-shadow-xl'>
+            {children}
+          </div>
           
       </body>
     </html>
