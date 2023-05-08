@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import SuPreviewPic from '../../public/su_preview.png';
 import ArtRossPreviewPic from '../../public/artross_preview.png';
+import GithubLogo from '../../public/GitHub_Logo.png'
 import { Rokkitt } from 'next/font/google';
 
 const rokkitt = Rokkitt({
@@ -73,15 +74,16 @@ export default function Home() {
   return (
     <main className="
       text-center
-      p-px
+      
     ">
-      <div>
+      <div className=''>
         <h1 className={`
           ${rokkitt.variable}
           font-serif
           text-5xl
           leading-loose
           mt-24
+          mx-auto
         `}
         >
           Darren T. MacDonald

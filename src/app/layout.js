@@ -33,11 +33,11 @@ export default function RootLayout({ children }) {
 
           <div className='
           paperPage
-          bg-gray-50
+          black
+          bg-transparent
           mx-auto
           mt-4
-          max-w-4xl
-          drop-shadow-xl'>
+          max-w-4xl'>
             {children}
           </div>
           
