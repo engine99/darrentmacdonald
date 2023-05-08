@@ -14,14 +14,7 @@ module.exports = {
   // ],
   theme: {
     extend: {
-      backgroundImage: {
-        
-      },
-      fontFamily: {
-        serif: ['var(--font-rokkitt)', ...fontFamily.serif],
-        sans: ['var(--font-nunito)', ...fontFamily.sans]
-      }
-    },
+    }
   },
   plugins: [],
 }

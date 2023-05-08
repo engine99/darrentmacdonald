@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import BackgroundPic from '../../public/7692.jpg';
 import SuPreviewPic from '../../public/su_preview.png';
 import ArtRossPreviewPic from '../../public/artross_preview.png';
 import GithubLogo from '../../public/GitHub_Logo.png'
@@ -7,6 +8,7 @@ import { Rokkitt } from 'next/font/google';
 
 const rokkitt = Rokkitt({
   subsets: ['latin'],
+  weight: '700', 
   variable: '--font-rokkitt',
 })
 
@@ -60,11 +62,13 @@ function BusiCard({title, description, imgsrc, live, github}) {
         alt="Serverless Deployment">
         <div className="
           w-40
-          overflow-hidden
+          h-40
+          overflow-clip
           ">
           <Image className="
             block
-            w-auto
+            min-w-full
+            min-h-full
             group-hover:scale-110
             rounded-md
             "
@@ -81,14 +85,20 @@ export default function Home() {
   return (
     <main className="
       text-center
-      text-2xl
+      text-base
+      md:text-xl
+      lg:text-2xl
     ">
-      <div className='leading-relaxed'>
+      <div  /* Page Header */
+        className='leading-relaxed'>  
         <a href="https://darrentmacdonald.com">
           <h1 className={`
-            ${rokkitt.variable}
+          ${rokkitt.variable}
             font-serif
-            text-5xl
+            font-bold
+            text-2xl
+            sm:text-4xl
+            md:text-5xl
             leading-relaxed
             mt-24
             mx-auto
@@ -97,20 +107,33 @@ export default function Home() {
             Darren T. MacDonald
           </h1>
         </a>
+        
+        <div className='
+        font-bold'>
+          <a href='mailto:darrentmacdonald@gmail.com'>Web</a> - 
+          <a href='mailto:darrentmacdonald@gmail.com'> Cloud</a> - 
+          <a href='mailto:photomodeling@gmail.com'> 3D</a>
+        </div>
+
         <div className='
           flex
           flex-row
-          items-center'>
-          <a className="
-            text-base
-            flex-auto
-            align-center
+          flex-wrap
+          items-center
+          m-16'>
+          <a  /* Gmail */ 
+            className="
+              text-lg
+              font-bold
+              flex-auto
             "
             href='mailto:darrentmacdonald@gmail.com'
-            >@gmail.com</a>
-          <a className='
-            flex-auto
-            grayscale' 
+            >
+              @gmail.com
+          </a>
+          <a    /* LinkedIn */
+            className='
+              flex-auto' 
             href="https://www.linkedin.com/in/darren-t-macdonald"
           >
             <Image
@@ -123,8 +146,9 @@ export default function Home() {
               w-auto'
             />
           </a>
-          <a className='
-            flex-auto' 
+          <a    /* Github */
+            className='
+              flex-auto' 
             href="https://github.com/engine99"
           >
             <Image
@@ -133,25 +157,28 @@ export default function Home() {
             className='
               max-w-auto
               inline
-              h-5
+              h-7
               w-auto'
             />
           </a>
         </div>
 
-        <div>
-          <a href='mailto:darrentmacdonald@gmail.com'>Web</a> - 
-          <a href='mailto:darrentmacdonald@gmail.com'> Cloud</a> - 
-          <a href='mailto:photomodeling@gmail.com'> 3D</a>
-        </div>
         
       </div>
-      <hr className='
-        mt-4
-        border-black'
+      
+      
+      <div /* Cards */
+        className="
+        my-auto       
+        text-center">  
+
+        <BusiCard
+          title="Developer profile"
+          live="www.hotmail.com"
+          description="This site"
+          imgsrc={BackgroundPic}
+          github="https://github.com/engine99/darrentmacdonald"
         />
-      <div className="my-auto       
-                      text-center">
 
         <BusiCard
           title="Artist Roster"

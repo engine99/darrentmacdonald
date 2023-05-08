@@ -4,9 +4,20 @@ import BackgroundPic from '../../public/7692.jpg';
 import { Inter } from 'next/font/google'
 import { Nunito_Sans } from 'next/font/google'
 import Image from 'next/image'
+import { Rokkitt } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
-const nunito = Nunito_Sans({ weight: '400', subsets: ['latin'] })
+const nunito = Nunito_Sans({
+   weight: ['400', '700'], 
+   subsets: ['latin'],
+   variable: '--font-nunito',
+   })
+
+   
+const rokkitt = Rokkitt({
+  subsets: ['latin'],
+  weight: ['400', '700'], 
+  variable: '--font-rokkitt',
+})
 
 export const metadata = {
   title: 'darrentmacdonald.com',
@@ -19,26 +30,33 @@ export default function RootLayout({ children }) {
       <head>
       </head>
       <body className=
-      {nunito.className}
+        {`
+        ${nunito.variable}
+        h-full
+        `}
       >
         <Image
+          className='
+            fixed
+            top-0
+            min-w-full
+            min-h-full
+            max-w-screen-xl
+            -z-10
+            '
           src={BackgroundPic}
           alt="Beautiful New Brunswick"
-          style={{
-            "zIndex": "-10",
-            top: 0,
-            position: "fixed",
-            width: "100%"
-          }}
         />
-
           <div className='
           paperPage
-          black
+          text-gray-900
           bg-transparent
           mx-auto
           mt-4
-          max-w-4xl'>
+          max-w-4xl
+          z-10'
+          
+          >
             {children}
           </div>
           
