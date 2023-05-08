@@ -2,9 +2,11 @@ import './globals.css'
 
 import BackgroundPic from '../../public/7692.jpg';
 import { Inter } from 'next/font/google'
+import { Nunito_Sans } from 'next/font/google'
 import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
+const nunito = Nunito_Sans({ weight: '400', subsets: ['latin'] })
 
 export const metadata = {
   title: 'darrentmacdonald.com',
@@ -16,9 +18,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
       </head>
-      <body className="
-      {inter.className}
-      ">
+      <body className=
+      {nunito.className}
+      >
         <Image
           src={BackgroundPic}
           alt="Beautiful New Brunswick"

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import SuPreviewPic from '../../public/su_preview.png';
 import ArtRossPreviewPic from '../../public/artross_preview.png';
 import GithubLogo from '../../public/GitHub_Logo.png'
+import LILogo from '../../public/LI-Logo.png'
 import { Rokkitt } from 'next/font/google';
 
 const rokkitt = Rokkitt({
@@ -81,16 +82,14 @@ export default function Home() {
     <main className="
       text-center
       text-2xl
-      
-      
     ">
-      <div className='leading-loose'>
+      <div className='leading-relaxed'>
         <a href="https://darrentmacdonald.com">
           <h1 className={`
             ${rokkitt.variable}
             font-serif
             text-5xl
-            leading-loose
+            leading-relaxed
             mt-24
             mx-auto
             `}
@@ -98,9 +97,36 @@ export default function Home() {
             Darren T. MacDonald
           </h1>
         </a>
-        <div>
-          <a href='mailto:darrentmacdonald@gmail.com'>@gmail.com</a>
-          <a href="https://github.com/engine99">
+        <div className='
+          flex
+          flex-row
+          items-center'>
+          <a className="
+            text-base
+            flex-auto
+            align-center
+            "
+            href='mailto:darrentmacdonald@gmail.com'
+            >@gmail.com</a>
+          <a className='
+            flex-auto
+            grayscale' 
+            href="https://www.linkedin.com/in/darren-t-macdonald"
+          >
+            <Image
+            src={LILogo}
+            alt="LinkedIn logo"
+            className='
+              max-w-auto
+              inline
+              h-5
+              w-auto'
+            />
+          </a>
+          <a className='
+            flex-auto' 
+            href="https://github.com/engine99"
+          >
             <Image
             src={GithubLogo}
             alt="Github logo"
@@ -120,7 +146,10 @@ export default function Home() {
         </div>
         
       </div>
-      <hr className='border-black'/>
+      <hr className='
+        mt-4
+        border-black'
+        />
       <div className="my-auto       
                       text-center">
 

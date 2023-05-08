@@ -19,6 +19,7 @@ module.exports = {
       },
       fontFamily: {
         serif: ['var(--font-rokkitt)', ...fontFamily.serif],
+        sans: ['var(--font-nunito)', ...fontFamily.sans]
       }
     },
   },
