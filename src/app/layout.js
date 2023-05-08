@@ -20,7 +20,6 @@ export default function RootLayout({ children }) {
       {inter.className}
       ">
         <Image
-          className='hidden md:block '
           src={BackgroundPic}
           alt="Beautiful New Brunswick"
           style={{
