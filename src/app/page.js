@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import SuPreviewPic from '../../public/su_preview.png';
+import ArtRossPreviewPic from '../../public/artross_preview.png';
 import { Rokkitt } from 'next/font/google';
-
 
 const rokkitt = Rokkitt({
   subsets: ['latin'],
@@ -28,9 +28,11 @@ function BusiCard({title, description, imgsrc, live, github}) {
       <div className="
           text-center
           flex-1">
-        <h2 className={`mb-3 text-2xl font-semibold`}>
-          {title + ' '}
-        </h2>
+        <a href={live}>
+          <h2 className={`mb-3 text-2xl font-semibold`}>
+            {title + ' '}
+          </h2>
+        </a>
         <p className={`m-0 text-sm opacity-50`}>
           {description}
         </p>
@@ -90,8 +92,16 @@ export default function Home() {
                       text-center">
 
         <BusiCard
+          title="Artist Roster"
+          live="https://www.darrentmacdonald.com/artross"
+          description="Serverless CRUD demo"
+          imgsrc={ArtRossPreviewPic}
+          github="https://github.com/engine99/serverless-express-react-crud-roster"
+        />
+
+        <BusiCard
           title="Sudoku"
-          href="https://www.darrentmacdonald.com/sudoku"
+          live="https://www.darrentmacdonald.com/sudoku"
           description="Handy mobile-friendly Sudoku puzzle-solver"
           imgsrc={SuPreviewPic}
           github="https://github.com/engine99/sudokusolver"

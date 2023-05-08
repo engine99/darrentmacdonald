@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           src={BackgroundPic}
           alt="Beautiful New Brunswick"
           style={{
-            "z-index": "-10",
+            "zIndex": "-10",
             top: 0,
             position: "fixed",
             width: "100%"
