@@ -3,6 +3,7 @@ import BackgroundPicSm from '../../public/7692sm.png';
 import SuPreviewPic from '../../public/su_preview.png';
 import ArtRossPreviewPic from '../../public/artross_preview.png';
 import GithubLogo from '../../public/GitHub_Logo.png'
+import GithubMark from '../../public/github-mark.png'
 import LILogo from '../../public/LI-Logo.png'
 import { Rokkitt } from 'next/font/google';
 import { Vollkorn } from 'next/font/google';
@@ -39,29 +40,48 @@ function BusiCard({title, description, imgsrc, live, github}) {
           flex-grow
           flex
           flex-col
-          text-center
+          px-8
+          py-4
+          w-2/3
           ">
-        <a href={live} className=''>
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            {title + ' '}
-          </h2>
-        </a>
-        <div className={` m-0 text-sm opacity-50`}>
+        <div className='
+          flex 
+          flex-row
+          items-start'>
+          <a href={live} 
+            className='
+            '>
+            <h2 className={`
+              mb-3 
+              text-3xl
+              text-left
+              font-semibold
+              text-gray-800
+              `}>
+              {title + ' '}
+            </h2>
+          </a>
+          <div className='flex-grow'></div>
+          <a href={github}
+            className=''
+            alt="github link">
+            <Image
+              src={GithubMark}
+              alt="Github mark"
+              className='
+                h-6
+                w-auto'
+            />
+          </a>
+        </div>
+        <div className={`
+          m-0 
+          text-base 
+          text-gray-700
+          text-left`}>
           {description}
         </div>
         <div className="flex-grow"></div>
-        <div className=''>
-          <a href={github} alt="github link">
-          <Image
-            src={GithubLogo}
-            alt="Github logo"
-            className='
-              inline
-              h-8
-              w-auto'
-            />
-          </a>
-          </div>
       </div>
       <a className="
         w-1/3"
