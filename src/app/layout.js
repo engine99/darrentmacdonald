@@ -13,11 +13,6 @@ const nunito = Nunito_Sans({
    })
 
    
-const rokkitt = Rokkitt({
-  subsets: ['latin'],
-  weight: ['400', '700'], 
-  variable: '--font-rokkitt',
-})
 
 export const metadata = {
   title: 'darrentmacdonald.com',
@@ -31,7 +26,8 @@ export default function RootLayout({ children }) {
       </head>
       <body className=
         {`
-        ${nunito.variable}
+        ${nunito.className}
+        font-normal
         h-full
         `}
       >
@@ -47,18 +43,18 @@ export default function RootLayout({ children }) {
           src={BackgroundPic}
           alt="Beautiful New Brunswick"
         />
-          <div className='
+        <div className='
           paperPage
           text-gray-900
           bg-transparent
           mx-auto
           mt-4
+          w-10/12
           max-w-4xl
           z-10'
-          
-          >
-            {children}
-          </div>
+        >
+          {children}
+        </div>
           
       </body>
     </html>

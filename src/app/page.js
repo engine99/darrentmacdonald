@@ -5,12 +5,18 @@ import ArtRossPreviewPic from '../../public/artross_preview.png';
 import GithubLogo from '../../public/GitHub_Logo.png'
 import LILogo from '../../public/LI-Logo.png'
 import { Rokkitt } from 'next/font/google';
+import { Vollkorn } from 'next/font/google';
 
 const rokkitt = Rokkitt({
   subsets: ['latin'],
-  weight: '700', 
   variable: '--font-rokkitt',
 })
+
+const vollkorn = Vollkorn({
+  subsets: ['latin'],
+  variable: '--font-domine',
+})
+
 
 function BusiCard({title, description, imgsrc, live, github}) {
   return (
@@ -21,7 +27,7 @@ function BusiCard({title, description, imgsrc, live, github}) {
       border 
       border-gray-300 
       p-0.5
-      m-8
+      my-8
       flex
       flex-row
       overflow:hidden
@@ -30,10 +36,12 @@ function BusiCard({title, description, imgsrc, live, github}) {
       >
       
       <div className="
-          text-center
           flex-grow
           flex
-          flex-col">
+          flex-col
+          text-center
+          w-2/3
+          ">
         <a href={live} className=''>
           <h2 className={`mb-3 text-2xl font-semibold`}>
             {title + ' '}
@@ -56,22 +64,23 @@ function BusiCard({title, description, imgsrc, live, github}) {
           </a>
           </div>
       </div>
-      <a href={live}
+      <a className="w-1/3"
+        href={live}
         target="_blank"
         rel="noopener noreferrer"
         alt="Serverless Deployment">
         <div className="
-          w-40
-          h-40
-          overflow-clip
+          overflow-hidden
+          relative
+          h-full
           ">
           <Image className="
             block
-            min-w-full
-            min-h-full
             group-hover:scale-110
             rounded-md
+            object-cover
             "
+            fill="true"
             src={imgsrc}
             alt={description}
             />
@@ -86,30 +95,31 @@ export default function Home() {
     <main className="
       text-center
       text-base
-      md:text-xl
-      lg:text-2xl
     ">
       <div  /* Page Header */
-        className='leading-relaxed'>  
-        <a href="https://darrentmacdonald.com">
-          <h1 className={`
-          ${rokkitt.variable}
-            font-serif
+        className='
+          mt-36
+          mx-auto
+          '
+        >  
+        <a  className={`
+          ${vollkorn.className}
             font-bold
-            text-2xl
-            sm:text-4xl
-            md:text-5xl
             leading-relaxed
-            mt-24
-            mx-auto
-            `}
+            text-2xl    sm:text-3xl   md:text-4xl  lg:text-5xl
+            `} 
+          href="https://darrentmacdonald.com">
+          <h1 className='leading-loose'
             >
             Darren T. MacDonald
           </h1>
         </a>
         
         <div className='
-        font-bold'>
+        font-bold
+        leading-relaxed
+        text-base   sm:text-xl  md:text-2xl  lg:text-3xl
+        '>
           <a href='mailto:darrentmacdonald@gmail.com'>Web</a> - 
           <a href='mailto:darrentmacdonald@gmail.com'> Cloud</a> - 
           <a href='mailto:photomodeling@gmail.com'> 3D</a>
@@ -121,7 +131,7 @@ export default function Home() {
           flex-wrap
           items-center
           m-16'>
-          <a  /* Gmail */ 
+          <a    /* Gmail */ 
             className="
               text-lg
               font-bold
