@@ -3,8 +3,9 @@ import BackgroundPicSm from '../../public/7692sm.png';
 import SuPreviewPic from '../../public/su_preview.png';
 import ArtRossPreviewPic from '../../public/artross_preview.png';
 import GithubLogo from '../../public/GitHub_Logo.png'
-import GithubMark from '../../public/github-mark.png'
 import LILogo from '../../public/LI-Logo.png'
+import GorillasPreview from '../../public/gorillas_preview.png'
+import PmPreview from '../../public/pm_preview.png'
 import { Vollkorn } from 'next/font/google';
 import { Fragment } from 'react';
 
@@ -77,7 +78,6 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
           flex-grow
           flex
           flex-col
-          space-y-2
           px-2    md:px-4   lg:px-8
           py-4
           w-2/3
@@ -91,7 +91,6 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
             className='
             '>
             <h2 className={`
-              mb-2
               text-xl   md:text-2xl lg:text-3xl
               text-left
               font-semibold
@@ -111,7 +110,7 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
               rounded-md
               px-3'
             alt="Source control repo">
-              src\
+              {github && github.length > 0 ? 'src\\' : ' '}
           </a>
         </div>
         <div           /* Card main text */
@@ -129,6 +128,7 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
             flex
             flex-row
             flex-wrap
+            mt-3
             ">
           <UlList className="
             basis-1/2"
@@ -261,32 +261,55 @@ export default function Home() {
       <div /* Cards */
         className="
         my-auto       
-        text-center">  
+        text-center">
 
         <BusiCard
-          title="Developer profile"
+          title="Photomodeling.ca"
+          live="https://photomodeling.ca"
+          description="Digital services website"
+          features={["Responsive","Serverless"]}
+          buildWith={['HubSpot', 'Foundation']}
+          imgsrc={PmPreview}
+        />
+
+        <BusiCard
+          title="Gorillas.bas Online"
+          live="https://gorillas.darrentmacdonald.com"
+          description="Online emulator for multiplayer DOS game"
+          features={["Mobile-friendly","Nostalgic"]}
+          buildWith={['DOSBox', 'WebSocket']}
+          imgsrc={GorillasPreview}
+          github="https://github.com/engine99/gorillas#readme"
+        />
+
+        <BusiCard
+          title="Sample Portfolio"
           live="#"
           description="This here site."
           features={["Responsive","Serverless"]}
           buildWith={['Next.js', 'Tailwind CSS']}
           imgsrc={BackgroundPicSm}
-          github="https://github.com/engine99/darrentmacdonald"
+          github="https://github.com/engine99/darrentmacdonald#readme"
         />
 
         <BusiCard
           title="Artist Roster"
           live="https://www.darrentmacdonald.com/artross"
           description="Serverless CRUD demo"
+          features={["Responsive","Serverless"]}
+          buildWith={['React', 'MongoDB']}
           imgsrc={ArtRossPreviewPic}
-          github="https://github.com/engine99/serverless-express-react-crud-roster"
+          github="https://github.com/engine99/serverless-express-react-crud-roster#readme"
         />
 
         <BusiCard
           title="Sudoku"
           live="https://www.darrentmacdonald.com/sudoku"
           description="Handy mobile-friendly Sudoku puzzle-solver"
+          features={["Responsive","Serverless"]}
+          buildWith={['Angular', 'Cordova']}
           imgsrc={SuPreviewPic}
-          github="https://github.com/engine99/sudokusolver"
+          github="https://github.com/engine99/sudokusolver#readme"
         />
 
       </div>
