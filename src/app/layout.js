@@ -1,18 +1,14 @@
 import './globals.css'
 
 import BackgroundPic from '../../public/7692.jpg';
-import { Inter } from 'next/font/google'
 import { Nunito_Sans } from 'next/font/google'
 import Image from 'next/image'
-import { Rokkitt } from 'next/font/google';
 
 const nunito = Nunito_Sans({
    weight: ['400', '700'], 
    subsets: ['latin'],
    variable: '--font-nunito',
    })
-
-   
 
 export const metadata = {
   title: 'darrentmacdonald.com',
@@ -42,6 +38,7 @@ export default function RootLayout({ children }) {
             '
           src={BackgroundPic}
           alt="Beautiful New Brunswick"
+          height={1500}
         />
         <div className='
           paperPage
