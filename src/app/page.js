@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import BackgroundPic from '../../public/7692.jpg';
+import BackgroundPicSm from '../../public/7692sm.png';
 import SuPreviewPic from '../../public/su_preview.png';
 import ArtRossPreviewPic from '../../public/artross_preview.png';
 import GithubLogo from '../../public/GitHub_Logo.png'
@@ -40,7 +40,6 @@ function BusiCard({title, description, imgsrc, live, github}) {
           flex
           flex-col
           text-center
-          w-2/3
           ">
         <a href={live} className=''>
           <h2 className={`mb-3 text-2xl font-semibold`}>
@@ -64,7 +63,8 @@ function BusiCard({title, description, imgsrc, live, github}) {
           </a>
           </div>
       </div>
-      <a className="w-1/3"
+      <a className="
+        w-1/3"
         href={live}
         target="_blank"
         rel="noopener noreferrer"
@@ -75,12 +75,13 @@ function BusiCard({title, description, imgsrc, live, github}) {
           h-full
           ">
           <Image className="
-            block
             group-hover:scale-110
             rounded-md
             object-cover
             "
             fill="true"
+            sizes="271px"
+            quality={100}
             src={imgsrc}
             alt={description}
             />
@@ -186,7 +187,7 @@ export default function Home() {
           title="Developer profile"
           live="www.hotmail.com"
           description="This site"
-          imgsrc={BackgroundPic}
+          imgsrc={BackgroundPicSm}
           github="https://github.com/engine99/darrentmacdonald"
         />
 
