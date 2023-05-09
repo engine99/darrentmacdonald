@@ -5,21 +5,57 @@ import ArtRossPreviewPic from '../../public/artross_preview.png';
 import GithubLogo from '../../public/GitHub_Logo.png'
 import GithubMark from '../../public/github-mark.png'
 import LILogo from '../../public/LI-Logo.png'
-import { Rokkitt } from 'next/font/google';
 import { Vollkorn } from 'next/font/google';
-
-const rokkitt = Rokkitt({
-  subsets: ['latin'],
-  variable: '--font-rokkitt',
-})
+import { Fragment } from 'react';
 
 const vollkorn = Vollkorn({
   subsets: ['latin'],
   variable: '--font-domine',
 })
 
+function UlList({className, title, list}) {
+  return Array.isArray(list) && list.length > 0 ? (
+    <ul className={`
+      ${className}
+      text-base
+      text-gray-700
+      list-inside
+      `}>
+        <span className='
+          text-sm
+          font-semibold'>
+          {title}:
+        </span>
+      {
+        list.map((t, i)=>{
+          return (
+            <li className='
+              list-image-none
+              '
+              key={i}
+            >
+              <span className='
+                inline-block
+                -rotate-90
+                origin-[40%_45%]
+                '>
+               г</span>
+               <Fragment>
+                &nbsp;
+                </Fragment>
+                <span>
+                  {t}
+                </span>
+            </li>
+          )
+        })
+      }
+    </ul>
+  ) : ( '' )
 
-function BusiCard({title, description, imgsrc, live, github}) {
+}
+
+function BusiCard({title, description, imgsrc, live, github, buildWith, features}) {
   return (
     <div className="
       group 
@@ -33,27 +69,30 @@ function BusiCard({title, description, imgsrc, live, github}) {
       flex-row
       overflow:hidden
       transition-colors
+      text-left
       "
       >
-      
-      <div className="
+      <div          /* Card text */
+        className="
           flex-grow
           flex
           flex-col
-          px-8
+          space-y-2
+          px-2    md:px-4   lg:px-8
           py-4
           w-2/3
           ">
-        <div className='
-          flex 
-          flex-row
-          items-start'>
+        <div          /* Card text top row */
+          className='
+            flex 
+            flex-row
+            items-start'>
           <a href={live} 
             className='
             '>
             <h2 className={`
-              mb-3 
-              text-3xl
+              mb-2
+              text-xl   md:text-2xl lg:text-3xl
               text-left
               font-semibold
               text-gray-800
@@ -63,28 +102,49 @@ function BusiCard({title, description, imgsrc, live, github}) {
           </a>
           <div className='flex-grow'></div>
           <a href={github}
-            className=''
-            alt="github link">
-            <Image
-              src={GithubMark}
-              alt="Github mark"
-              className='
-                h-6
-                w-auto'
-            />
+            className='
+              text-white
+              bg-gray-600
+              border-gray-300
+              border-1
+              shadow-md
+              rounded-md
+              px-3'
+            alt="Source control repo">
+              src\
           </a>
         </div>
-        <div className={`
-          m-0 
-          text-base 
-          text-gray-700
-          text-left`}>
+        <div           /* Card main text */
+          className={`
+            m-2 
+            text-lg 
+            text-gray-700
+            text-left`}>
           {description}
         </div>
-        <div className="flex-grow"></div>
+        <div        /* Card bottom */
+          className="
+            leading-loose
+            flex-grow
+            flex
+            flex-row
+            flex-wrap
+            ">
+          <UlList className="
+            basis-1/2"
+            title="Why it's great"
+            list={features}
+            />
+          <UlList className="
+            basis-1/2"
+            title='Built with'
+            list={buildWith}
+            />
       </div>
-      <a className="
-        w-1/3"
+    </div>
+      <a          /* Card Image */
+        className="
+          w-1/3"
         href={live}
         target="_blank"
         rel="noopener noreferrer"
@@ -205,8 +265,10 @@ export default function Home() {
 
         <BusiCard
           title="Developer profile"
-          live="www.hotmail.com"
-          description="This site"
+          live="#"
+          description="This here site."
+          features={["Responsive","Serverless"]}
+          buildWith={['Next.js', 'Tailwind CSS']}
           imgsrc={BackgroundPicSm}
           github="https://github.com/engine99/darrentmacdonald"
         />
