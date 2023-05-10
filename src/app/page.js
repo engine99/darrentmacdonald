@@ -165,6 +165,7 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
             quality={100}
             src={imgsrc}
             alt={description}
+            placeholder='blur'
             />
         </div>
       </a>
