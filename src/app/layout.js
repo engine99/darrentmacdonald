@@ -45,6 +45,7 @@ export default function RootLayout({ children }) {
             src={BackgroundPic}
             alt="Beautiful New Brunswick"
             height={1500}
+            placeholder='blur'
           />
           <div className='
             paperPage
