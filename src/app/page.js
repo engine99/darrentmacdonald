@@ -61,7 +61,7 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
       rounded-lg 
       border 
       border-gray-300 
-      my-12
+      my-8
       p-2
       flex
       flex-row
@@ -158,7 +158,7 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
             group-hover:scale-125
             object-cover
             filter dark:brightness-75
-            transition-transform duration-1000
+            transition-transform duration-500
             "
             fill="true"
             sizes="271px"
@@ -180,39 +180,17 @@ export default function Home() {
     ">
       <div  /* Page Header */
         className='
-          mt-36
+          my-32
           mx-auto
           '
       >  
-        <a className='
-          text-5xl'
-          href="https://darrentmacdonald.com"
-        >
-          <h1 className={`
-            leading-relaxed
-            ${vollkorn.className}
-            font-bold
-          `}>
-            Darren T. MacDonald
-          </h1>
-        </a>
-        
-        <div className='
-          font-bold
-          text-2xl
-          mt-1
-        '>
-          <a href='mailto:darrentmacdonald@gmail.com'>Web</a> - 
-          <a href='mailto:darrentmacdonald@gmail.com'> Cloud</a> - 
-          <a href='mailto:photomodeling@gmail.com'> 3D</a>
-        </div>
-
+       
         <div className='
           flex
           flex-row
           flex-wrap
           items-center
-          m-16'>
+        '>
           <a    /* Gmail */ 
             className="
               text-lg
@@ -261,8 +239,8 @@ export default function Home() {
       
       <div /* Cards */
         className="
-        my-auto       
-        text-center">
+          my-auto       
+          text-center">
 
         <BusiCard
           title="Photomodeling.ca"
@@ -286,7 +264,7 @@ export default function Home() {
         <BusiCard
           title="Sample Portfolio"
           live="#"
-          description="This here site."
+          description="This here website"
           features={["Responsive","Serverless","Dark mode"]}
           buildWith={['Next.js', 'Tailwind CSS']}
           imgsrc={BackgroundPicSm}

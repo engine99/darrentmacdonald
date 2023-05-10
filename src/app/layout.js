@@ -23,9 +23,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className=
         {`
-        ${nunito.className}
-        font-normal
-        h-full
+          ${nunito.className}
+          font-normal
+          h-full
         `}
       >
         <Providers>   {/* Provides a dark theme */}
