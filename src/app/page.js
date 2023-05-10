@@ -30,6 +30,7 @@ function UlList({className, title, list}) {
           return (
             <li className='
               list-image-none
+              whitespace-nowrap
               '
               key={i}
             >
@@ -40,7 +41,9 @@ function UlList({className, title, list}) {
                 '>
                г
               </span>
-              {'\u00A0'+t}
+              <span>
+                {'\u00A0'+t}
+              </span>
             </li>
           )
         })
@@ -58,8 +61,8 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
       rounded-lg 
       border 
       border-gray-300 
-      p-0.5
-      my-8
+      my-12
+      p-2
       flex
       flex-row
       overflow:hidden
@@ -102,7 +105,8 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
               border-1
               shadow-md
               rounded-md
-              px-3'
+              px-3
+              text-sm'
             alt="Source control repo">
               {github && github.length > 0 ? 'src\u00A0\\' : ' '}
           </a>
@@ -123,7 +127,7 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
             flex-row
             flex-wrap
             mt-3
-            text-xs
+            text-sm
             ">
           <UlList className="
             basis-1/2"
@@ -253,10 +257,7 @@ export default function Home() {
             />
           </a>
         </div>
-
-        
       </div>
-      
       
       <div /* Cards */
         className="

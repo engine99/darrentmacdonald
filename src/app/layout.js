@@ -52,8 +52,8 @@ export default function RootLayout({ children }) {
             bg-transparent
             mx-auto
             mt-4
-            w-10/12
-            max-w-4xl
+            w-11/12 md:w-10/12
+            max-w-5xl
             z-10'
           >
             {children}
