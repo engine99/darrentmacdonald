@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "next-themes": "^0.2.1",
-    "nightwind": "^1.1.13"
+    "nightwind": "^1.1.13",
+    "tailwindcss-fluid-type": "^2.0.3"
   }
 }

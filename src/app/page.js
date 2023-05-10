@@ -18,12 +18,10 @@ function UlList({className, title, list}) {
   return Array.isArray(list) && list.length > 0 ? (
     <ul className={`
       ${className}
-      text-base
       text-gray-700
       list-inside
       `}>
         <span className='
-          text-sm
           font-semibold'>
           {title}:
         </span>
@@ -40,13 +38,9 @@ function UlList({className, title, list}) {
                 -rotate-90
                 origin-[40%_45%]
                 '>
-               г</span>
-               <Fragment>
-                &nbsp;
-                </Fragment>
-                <span>
-                  {t}
-                </span>
+               г
+              </span>
+              {'\u00A0'+t}
             </li>
           )
         })
@@ -91,7 +85,7 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
             className='
             '>
             <h2 className={`
-              text-xl   md:text-2xl lg:text-3xl
+              text-xl
               text-left
               font-semibold
               text-gray-800
@@ -110,13 +104,13 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
               rounded-md
               px-3'
             alt="Source control repo">
-              {github && github.length > 0 ? 'src\\' : ' '}
+              {github && github.length > 0 ? 'src\u00A0\\' : ' '}
           </a>
         </div>
         <div           /* Card main text */
           className={`
             m-2 
-            text-lg 
+            text-base 
             text-gray-700
             text-left`}>
           {description}
@@ -129,6 +123,7 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
             flex-row
             flex-wrap
             mt-3
+            text-xs
             ">
           <UlList className="
             basis-1/2"
@@ -184,24 +179,24 @@ export default function Home() {
           mt-36
           mx-auto
           '
-        >  
-        <a  className={`
-          ${vollkorn.className}
-            font-bold
+      >  
+        <a className='
+          text-5xl'
+          href="https://darrentmacdonald.com"
+        >
+          <h1 className={`
             leading-relaxed
-            text-2xl    sm:text-3xl   md:text-4xl  lg:text-5xl
-            `} 
-          href="https://darrentmacdonald.com">
-          <h1 className='leading-loose'
-            >
+            ${vollkorn.className}
+            font-bold
+          `}>
             Darren T. MacDonald
           </h1>
         </a>
         
         <div className='
-        font-bold
-        leading-relaxed
-        text-base   sm:text-xl  md:text-2xl  lg:text-3xl
+          font-bold
+          text-2xl
+          mt-1
         '>
           <a href='mailto:darrentmacdonald@gmail.com'>Web</a> - 
           <a href='mailto:darrentmacdonald@gmail.com'> Cloud</a> - 
