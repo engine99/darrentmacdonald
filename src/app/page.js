@@ -153,11 +153,13 @@ function BusiCard({title, description, imgsrc, live, github, buildWith, features
           overflow-hidden
           relative
           h-full
+          rounded-md
           ">
           <Image className="
-            group-hover:scale-110
-            rounded-md
+            group-hover:scale-125
             object-cover
+            filter dark:brightness-75
+            transition-transform duration-1000
             "
             fill="true"
             sizes="271px"
@@ -217,6 +219,7 @@ export default function Home() {
               text-lg
               font-bold
               flex-auto
+              text-gray-900
             "
             href='mailto:darrentmacdonald@gmail.com'
             >
@@ -234,7 +237,8 @@ export default function Home() {
               max-w-auto
               inline
               h-5
-              w-auto'
+              w-auto
+              filter dark:invert'
             />
           </a>
           <a    /* Github */
@@ -249,7 +253,8 @@ export default function Home() {
               max-w-auto
               inline
               h-7
-              w-auto'
+              w-auto
+              filter dark:invert'
             />
           </a>
         </div>
@@ -286,7 +291,7 @@ export default function Home() {
           title="Sample Portfolio"
           live="#"
           description="This here site."
-          features={["Responsive","Serverless"]}
+          features={["Responsive","Serverless","Dark mode"]}
           buildWith={['Next.js', 'Tailwind CSS']}
           imgsrc={BackgroundPicSm}
           github="https://github.com/engine99/darrentmacdonald#readme"
@@ -297,7 +302,7 @@ export default function Home() {
           live="https://www.darrentmacdonald.com/artross"
           description="Serverless CRUD demo"
           features={["Responsive","Serverless"]}
-          buildWith={['React', 'MongoDB']}
+          buildWith={['React', 'MongoDB','API Gateway']}
           imgsrc={ArtRossPreviewPic}
           github="https://github.com/engine99/serverless-express-react-crud-roster#readme"
         />

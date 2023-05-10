@@ -12,9 +12,8 @@ module.exports = {
   //     pattern: /./, Use this to build & include all styles
   //   },
   // ],
-  theme: {
-    extend: {
-    }
-  },
-  plugins: [],
+  plugins: [
+    require("nightwind")
+  ],
+  darkMode: "class"
 }
