@@ -53,7 +53,7 @@ function UlList({className, title, list}) {
 
 }
 
-function BusiCard({title, description, imgsrc, live, github, buildWith, features}) {
+function SampleCard({title, description, imgsrc, live, github, buildWith, features}) {
   return (
     <div className="
       group 
@@ -243,7 +243,7 @@ export default function Home() {
           my-auto       
           text-center">
 
-        <BusiCard
+        <SampleCard
           title="Photomodeling.ca"
           live="https://photomodeling.ca"
           description="Digital services website"
@@ -252,17 +252,17 @@ export default function Home() {
           imgsrc={PmPreview}
         />
 
-        <BusiCard
+        <SampleCard
           title="Gorillas.bas Online"
           live="https://gorillas.darrentmacdonald.com"
           description="Online emulator for multiplayer DOS game"
-          features={["Mobile-friendly","Nostalgic"]}
-          buildWith={['DOSBox', 'WebSocket']}
+          features={["Mobile-friendly", "Nostalgic"]}
+          buildWith={['Node', 'DOSBox', 'WebSocket']}
           imgsrc={GorillasPreview}
           github="https://github.com/engine99/gorillas#readme"
         />
 
-        <BusiCard
+        <SampleCard
           title="Sample Portfolio"
           live="#"
           description="This here website"
@@ -272,7 +272,7 @@ export default function Home() {
           github="https://github.com/engine99/darrentmacdonald#readme"
         />
 
-        <BusiCard
+        <SampleCard
           title="Artist Roster"
           live="https://www.darrentmacdonald.com/artross"
           description="Serverless CRUD demo"
@@ -282,7 +282,7 @@ export default function Home() {
           github="https://github.com/engine99/serverless-express-react-crud-roster#readme"
         />
 
-        <BusiCard
+        {/* <BusiCard
           title="Sudoku"
           live="https://www.darrentmacdonald.com/sudoku"
           description="Handy mobile-friendly Sudoku puzzle-solver"
@@ -290,7 +290,7 @@ export default function Home() {
           buildWith={['Angular', 'Cordova']}
           imgsrc={SuPreviewPic}
           github="https://github.com/engine99/sudokusolver#readme"
-        />
+        /> */}
 
       </div>
     </main>
